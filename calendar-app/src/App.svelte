@@ -1,40 +1,18 @@
 <script>
-	import CalendarHeader from "./components/CalendarHeader.svelte";
-	import CalendarView from "./components/CalendarView.svelte";
-	import BottomNavigation from "./components/BottomNavigation.svelte";
-  
-	let view = "Mes"; // Vista inicial (Mes o Día)
-	let selectedDate = new Date(); // Fecha seleccionada (inicia con hoy)
-  
-	const changeView = (newView) => {
-	  view = newView; // Cambia entre "Mes" y "Día"
-	};
-  
-	const updateSelectedDate = (date) => {
-	  selectedDate = date; // Actualiza la fecha seleccionada
-	};
+	import { Router, Route } from 'svelte-routing';
+	import Home from './components/Home.svelte'; // Componente principal con el menú
+	import RegistroPedidos from './pages/RegistroPedidos.svelte'; // Componente de registro de pedidos
+	import CalendarView from './components/CalendarView.svelte'; // El componente del calendario
   </script>
   
   <main>
-	<!-- Encabezado -->
-	<CalendarHeader {view} onViewChange={changeView} />
-	
-	<!-- Vista principal del calendario -->
-	<CalendarView {view} {selectedDate} onDateChange={updateSelectedDate} />
-	
-	<!-- Barra de navegación inferior -->
-	<BottomNavigation />
-  
+	<Router>
+	  <!-- Ruta para el componente Home (con el menú y el calendario) -->
+	  <Route path="/" component={Home} />
+	  <!-- Ruta para la página de registro de pedidos -->
+	  <Route path="/registro-pedidos" component={RegistroPedidos} />
+	  <!-- Ruta para la vista del calendario -->
+	  <Route path="/calendario" component={CalendarView} />
+	</Router>
   </main>
-  
-  <style>
-	main {
-	  font-family: Arial, sans-serif;
-	  display: flex;
-	  flex-direction: column;
-	  height: 100vh;
-	  justify-content: space-between;
-	  background-color: #f9f9f9;
-	}
-  </style>
   

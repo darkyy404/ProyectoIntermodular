@@ -23,6 +23,8 @@
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/interaction": "^6.1.15",
     "date-fns": "^4.1.0",
-    "sirv-cli": "^2.0.0"
+    "sirv-cli": "^2.0.0",
+    "svelte-routing": "^2.13.0",
+    "svelte-spa-router": "^4.0.1"
   }
 }
