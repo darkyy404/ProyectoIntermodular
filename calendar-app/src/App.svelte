@@ -7,10 +7,11 @@
 	import Contactos from './components/Contactos.svelte'; // Componente de contactos
 	import RegistroPedidos from './components/RegistroPedidos.svelte'; // Componente de registro de pedidos
 	import Configuraciones from './components/Configuraciones.svelte'; // Componente de configuraciones
-	
+	import ControlInventario from './components/ControlInventario.svelte'; // Componente de control de inventario
+  
 	let activeTab = "Calendario"; // Tab activo
 	let menuOpen = false; // Estado del menú
-  
+	
 	// Redirigir automáticamente a /Inicio cuando se carga el componente
 	onMount(() => {
 	  navigate('/Inicio');
@@ -30,6 +31,7 @@
 	<Route path="/contactos" component={Contactos} /> <!-- Ruta a los contactos -->
 	<Route path="/registro-pedidos" component={RegistroPedidos} /> <!-- Ruta al registro de pedidos -->
 	<Route path="/configuraciones" component={Configuraciones} /> <!-- Ruta a configuraciones -->
+	<Route path="/control-inventario" component={ControlInventario} /> <!-- Ruta al control de inventario -->
   </Router>
   
   <!-- Barra de navegación en la parte inferior -->
